@@ -21,6 +21,7 @@ fn test_expiration_enforcement_safe() {
         dir_url(base.join("targets")),
     )
     .load();
+
     if let Err(err) = result {
         match err {
             ExpiredMetadata { role, backtrace: _ } => {
