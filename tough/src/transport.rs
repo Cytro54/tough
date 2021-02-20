@@ -149,7 +149,7 @@ impl Transport for FilesystemTransport {
         }
 
         // Convert the file URL into a file path
-        let file_path = &url.to_file_path().map_err(|_| {
+        let file_path = &url.to_file_path().map_err(|_e| {
             TransportError::new_with_cause(
                 TransportErrorKind::Other,
                 &url,
